@@ -1,9 +1,9 @@
 version: "3"
 services:
-  web-application:
-    image: repo.treescale.com/starinje/web-application:latest
-    ports:
-      - "5000:5000"
+  # web-application:
+  #   image: repo.treescale.com/starinje/web-application:latest
+  #   ports:
+  #     - "5000:5000"
   data-service:
     image: "repo.treescale.com/starinje/data-service:latest"
     environment:
@@ -15,8 +15,8 @@ services:
       - mongo
     links:
       - mongo
-  score-calculation-service:
-    image: "repo.treescale.com/starinje/data-service:latest"
+  # score-calculation-service:
+  #   image: "repo.treescale.com/starinje/data-service:latest"
   mongo:
     image: "mongo"
     healthcheck:
