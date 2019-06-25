@@ -10,5 +10,3 @@ services:
       - "8080:8080"
   score-calculation-service:
     image: "repo.treescale.com/starinje/data-service:latest"
-  mongo:
-    image: "mongo"
