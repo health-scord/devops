@@ -16,7 +16,7 @@ services:
     links:
       - mongo
   score-calculation-service:
-    image: "repo.treescale.com/starinje/data-service:latest"
+    image: "repo.treescale.com/starinje/score-calculation-service:latest"
   mongo:
     image: "mongo"
     healthcheck:
