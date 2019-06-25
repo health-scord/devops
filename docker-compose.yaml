@@ -6,6 +6,8 @@ services:
   #     - "5000:5000"
   data-service:
     image: "repo.treescale.com/starinje/data-service:latest"
+    environment:
+      - MONGODB_URI: mongo
     ports:
       - "8080:8080"
     restart: on-failure
