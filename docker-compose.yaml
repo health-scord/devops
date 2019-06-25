@@ -8,5 +8,9 @@ services:
     image: "repo.treescale.com/starinje/data-service:latest"
     ports:
       - "8080:8080"
+    depends_on:
+      - mongo
   score-calculation-service:
     image: "repo.treescale.com/starinje/data-service:latest"
+  mongo:
+    image: "mongo"
