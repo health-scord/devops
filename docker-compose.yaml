@@ -1,22 +1,24 @@
 version: "3"
 services:
-  web-application:
-    image: repo.treescale.com/starinje/web-application:latest
-    ports:
-      - "5000:5000"
+  # web-application:
+  #   image: repo.treescale.com/starinje/web-application:latest
+  #   ports:
+  #     - "443:443"
+  score-calculation-service:
+    image: "repo.treescale.com/starinje/score-calculation-service:latest"
+    environment:
+      DATA_SERVICE_URI: data-service
+      DATA_SERVICE_PORT: 9000
   data-service:
     image: "repo.treescale.com/starinje/data-service:latest"
     environment:
       MONGODB_URI: mongo
-    ports:
-      - "8080:8080"
+      PORT: 9000
+    expose:
+      - "9000"
     restart: on-failure
     depends_on:
       - mongo
-    links:
-      - mongo
-  score-calculation-service:
-    image: "repo.treescale.com/starinje/score-calculation-service:latest"
   mongo:
     image: "mongo"
     healthcheck:
