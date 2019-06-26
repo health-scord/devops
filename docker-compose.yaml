@@ -4,11 +4,11 @@ services:
     image: repo.treescale.com/starinje/web-application:latest
     ports:
       - "443:443"
-  score-calculation-service:
-    image: "repo.treescale.com/starinje/score-calculation-service:latest"
-    environment:
-      DATA_SERVICE_URI: data-service
-      DATA_SERVICE_PORT: 9000
+  # score-calculation-service:
+  #   image: "repo.treescale.com/starinje/score-calculation-service:latest"
+  #   environment:
+  #     DATA_SERVICE_URI: data-service
+  #     DATA_SERVICE_PORT: 9000
   data-service:
     image: "repo.treescale.com/starinje/data-service:latest"
     environment:
