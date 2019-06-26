@@ -1,9 +1,9 @@
 version: "3"
 services:
-  # web-application:
-  #   image: repo.treescale.com/starinje/web-application:latest
-  #   ports:
-  #     - "443:443"
+  web-application:
+    image: repo.treescale.com/starinje/web-application:latest
+    ports:
+      - "443:443"
   score-calculation-service:
     image: "repo.treescale.com/starinje/score-calculation-service:latest"
     environment:
