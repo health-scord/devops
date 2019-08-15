@@ -11,6 +11,8 @@ services:
       DATA_SERVICE_PORT: 9000
   data-service:
     image: "repo.treescale.com/starinje/data-service:latest"
+    ports:
+      - "9000:9000"
     environment:
       MONGODB_URI: mongo
       PORT: 9000
