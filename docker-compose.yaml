@@ -1,16 +1,18 @@
 version: "3"
 services:
   web-application:
-    image: repo.treescale.com/starinje/web-application:latest
+    image: repo.treescale.com/starinje/scord/web-application:latest
+    DATA_SERVICE_URI: data-service
+    DATA_SERVICE_PORT: 9000
     ports:
       - "443:443"
   score-calculation-service:
-    image: "repo.treescale.com/starinje/score-calculation-service:latest"
+    image: "repo.treescale.com/starinje/scord/score-calculation-service:latest"
     environment:
       DATA_SERVICE_URI: data-service
       DATA_SERVICE_PORT: 9000
   data-service:
-    image: "repo.treescale.com/starinje/data-service:latest"
+    image: "repo.treescale.com/starinje/scord/data-service:latest"
     ports:
       - "9000:9000"
     environment:
