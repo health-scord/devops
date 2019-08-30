@@ -1,18 +1,18 @@
 version: "3"
 services:
   web-application:
-    image: repo.treescale.com/Starin/scord/web-application:latest
+    image: repo.treescale.com/Starin/web-application:latest
     DATA_SERVICE_URI: data-service
     DATA_SERVICE_PORT: 9000
     ports:
       - "443:443"
   score-calculation-service:
-    image: "repo.treescale.com/Starin/scord/score-calculation-service:latest"
+    image: "repo.treescale.com/Starin/score-calculation-service:latest"
     environment:
       DATA_SERVICE_URI: data-service
       DATA_SERVICE_PORT: 9000
   data-service:
-    image: "repo.treescale.com/Starin/scord/data-service:latest"
+    image: "repo.treescale.com/Starin/data-service:latest"
     ports:
       - "9000:9000"
     environment:
