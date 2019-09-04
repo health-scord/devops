@@ -1,32 +1,32 @@
 version: "3"
 services:
   web-application:
-    image: "cloud.canister.io:5000/starinje/web-application:latest"
+    image: cloud.canister.io:5000/starinje/web-application:latest
     DATA_SERVICE_URI: data-service
     DATA_SERVICE_PORT: 9000
     ports:
-      - "443:443"
+      - 443:443
   score-calculation-service:
-    image: "cloud.canister.io:5000/starinje/score-calculation-service:latest"
+    image: cloud.canister.io:5000/starinje/score-calculation-service:latest
     environment:
       DATA_SERVICE_URI: data-service
       DATA_SERVICE_PORT: 9000
   data-service:
-    image: "cloud.canister.io:5000/starinje/data-service:latest"
+    image: cloud.canister.io:5000/starinje/data-service:latest
     ports:
-      - "9000:9000"
+      - 9000:9000
     environment:
       MONGODB_URI: mongo
       PORT: 9000
     expose:
-      - "9000"
+      - 9000
     restart: on-failure
     depends_on:
       - mongo
   mongo:
-    image: "mongo"
+    image: mongo
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
       - /root/data/db:/data/db
       - /root/data/configdb:/data/configdb
