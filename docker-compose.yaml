@@ -2,8 +2,9 @@ version: "3"
 services:
   web-application:
     image: cloud.canister.io:5000/starinje/web-application:latest
-    DATA_SERVICE_URI: data-service
-    DATA_SERVICE_PORT: 9000
+    environment:
+      DATA_SERVICE_URI: data-service
+      DATA_SERVICE_PORT: 9000
     ports:
       - 443:443
   score-calculation-service:
