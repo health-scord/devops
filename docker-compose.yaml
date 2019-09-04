@@ -1,18 +1,18 @@
 version: "3"
 services:
   web-application:
-    image: repo.treescale.com/Starin/web-application:latest
+    image: cloud.canister.io:5000/starinje/web-application:latest
     DATA_SERVICE_URI: data-service
     DATA_SERVICE_PORT: 9000
     ports:
       - "443:443"
   score-calculation-service:
-    image: "repo.treescale.com/Starin/score-calculation-service:latest"
+    image: "cloud.canister.io:5000/starinje/score-calculation-service:latest"
     environment:
       DATA_SERVICE_URI: data-service
       DATA_SERVICE_PORT: 9000
   data-service:
-    image: "repo.treescale.com/Starin/data-service:latest"
+    image: "cloud.canister.io:5000/starinje/data-service:latest"
     ports:
       - "9000:9000"
     environment:
